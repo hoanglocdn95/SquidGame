@@ -2,10 +2,82 @@
 <html>
   <head>
     <title>Squid Game</title>
-    <link rel="stylesheet" src='index.css'>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" type="image/png" href="./img/logo.png"/>
   </head>
   <body>
-
-    <script ></script>
+    <audio id="nextStepSound">
+      <source src="./audio/next_step.mpeg" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="failSound">
+      <source src="./audio/wrong_answer.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="successSound">
+      <source src="./audio/right_answer.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div id='container'>
+      <div id='info'>
+        <div id="point">
+          <p>POINT:</p>
+          <p id='pointValue'>0</p>
+        </div>
+      </div>
+      <div id='area'>
+        <div id='road'></div>
+      </div>
+      <div id='channel'>
+        <img src='./img/Easy Game Logo.png' alt=''>
+      </div>
+    </div>
+    <div id='modalStart'>
+      <div class='modal__container'>
+        <div id='modal__content'>
+          <strong>Welcome to my Squid Game: Walk Through Glass</strong>
+          <br>
+          <strong>Created by Easy gamE Team</strong>
+          <br>--------------------------------------------------<br>
+          <i>This game is inspired by Squid Game movie</i>
+          <br>--------------------------------------------------<br>
+          If this is the first time you play this game,
+          please read rule before press button 'START'
+          <br><br><strong>RULE</strong>
+          <br>You must move from 'point A' to 'point B' by press 
+          glass with blink effect, each step you click,
+          you must choose between 2 glass: DEAD GLASS and ALIVE GLASS.
+          <br> => If you choose DEAD GLASS, GAME OVER!!!
+          <br> => If you choose ALIVE GLASS, you receive 1 point,
+          you will win when you stand at point B
+          <br>--------------------------------------------------<br>
+          <strong>Choose level of game you want try</strong>
+          <br>
+          <input id='type__level' type='number' min='1' max='7' value='2'
+             onkeydown="return false">
+        </div>
+        <div id='modal__footer'>
+        <button id='start'>START</button>
+        </div>
+      </div>
+    </div>
+    <div id='modalSuccess' class="hide">
+      <div class='modal__container'>
+        <div id='success'>
+          <strong>YOU WIN!!! YOU'RE THE BEST</strong>
+          <br> FACT: You only have <b id='percentSuccess'></b> chance to win this game (If you don't cheat)
+          <button class='again'>AGAIN</button>
+        </div>
+      </div>
+    </div>
+    <div id='modalFail' class="hide">
+      <div class='modal__container'>
+        <div id='fail'>
+          <strong>YOU FAILED!!! WANNA TRY AGAIN?</strong>
+          <button class='again'>AGAIN</button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
